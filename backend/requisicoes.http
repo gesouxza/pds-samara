@@ -1,96 +1,85 @@
-### Listar todos os donos
-GET http://localhost:5000/donos
+### =================================================================
+### TESTES DAS ROTAS DE DONOS
+### =================================================================
 
-### Buscar um dono pelo id
-GET http://localhost:5000/donos/1
+### 1. Listar todos os donos
+GET http://127.0.0
+Accept: application/json
 
-### Cadastrar um novo dono
-POST http://localhost:5000/donos
+###
+
+### 2. Buscar um dono específico por ID (Ex: ID 1)
+GET http://127.0.0/1
+Accept: application/json
+
+###
+
+### 3. Cadastrar um novo dono
+POST http://127.0.0
 Content-Type: application/json
 
 {
-    "nome": "Diego Souza",
-    "telefone": "45999110004"
+    "nome": "Carlos Souza",
+    "telefone": "45999887766"
 }
 
-### Atualizar um dono
-PUT http://localhost:5000/donos/1
+###
+
+### 4. Atualizar os dados de um dono (Ex: ID 1)
+PUT http://127.0.0/1
 Content-Type: application/json
 
 {
-    "nome": "Ana Paula Ribeiro da Silva",
+    "nome": "Ana Paula Ribeiro Silva",
     "telefone": "45999110001"
 }
 
-### Remover um dono
-DELETE http://localhost:5000/donos/3
+###
+
+### 5. Deletar um dono (Ex: ID 3)
+DELETE http://127.0.0/3
 
 
-#### Listar todos os pets
-GET http://localhost:5000/pets
+### =================================================================
+### TESTES DAS ROTAS DE PETS
+### =================================================================
 
-### Listar pets de um dono
-GET http://localhost:5000/pets?dono_id=1
+### 6. Listar todos os pets (mostra o nome do dono automaticamente)
+GET http://127.0.0
+Accept: application/json
 
-### Buscar pet pelo id
-GET http://localhost:5000/pets/1
+###
 
-### Cadastrar pet
-POST http://localhost:5000/pets
+### 7. Buscar um pet específico por ID (Ex: ID 1)
+GET http://127.0.0/1
+Accept: application/json
+
+###
+
+### 8. Cadastrar un novo pet (Vinculado ao dono ID 1)
+POST http://127.0.0
 Content-Type: application/json
 
 {
-    "nome": "Bidu",
-    "especie": "cachorro",
-    "idade": 2,
+    "nome": "Mel",
+    "especie": "gato",
+    "idade": 3,
     "dono_id": 1
 }
 
-### Atualizar pet
-PUT http://localhost:5000/pets/1
+###
+
+### 9. Atualizar os dados de um pet (Ex: ID 1)
+PUT http://127.0.0/1
 Content-Type: application/json
 
 {
-    "nome": "Rex",
+    "nome": "Rex Antigo",
     "especie": "cachorro",
-    "idade": 5,
-    "dono_id": 1
+    "idade": 5
 }
 
-### Remover pet
-DELETE http://localhost:5000/pets/5
+###
 
-
-### Listar todos os pets (com o nome do dono)
-GET http://localhost:5000/pets
-
-### Listar apenas os pets de um dono (filtro por query param)
-GET http://localhost:5000/pets?dono_id=1
-
-### Buscar um pet pelo id
-GET http://localhost:5000/pets/1
-
-### Cadastrar um novo pet
-POST http://localhost:5000/pets
-Content-Type: application/json
-
-{
-    "nome": "Bidu",
-    "especie": "cachorro",
-    "idade": 2,
-    "dono_id": 1
-}
-
-### Atualizar um pet
-PUT http://localhost:5000/pets/1
-Content-Type: application/json
-
-{
-    "nome": "Rex",
-    "especie": "cachorro",
-    "idade": 5,
-    "dono_id": 1
-}
-
-### Remover um pet
-DELETE http://localhost:5000/pets/5
+### 10. Deletar um pet (Ex: ID 3)
+DELETE http://127.0.0/3
